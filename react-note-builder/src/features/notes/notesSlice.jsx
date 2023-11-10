@@ -6,10 +6,10 @@ const notesSlice = createSlice({
         items: [],
     },
     reducers: {
-        addNotes: (state, action) =>{
+        addNote: (state, action) =>{
             state.items.push(action.payload)
         },
-        removeNotes: (state, action ) =>{
+        removeNote: (state, action ) =>{
             state.items = state.items.filter((note) => note !== action.payload)
         }
     }
