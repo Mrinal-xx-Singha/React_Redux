@@ -1,5 +1,5 @@
 body{
-    background-image: url(assets/cover.jpg);
+    /* background-image: url(assets/cover.jpg); */
     background-position:center;
     background-repeat:no-repeat;
     background-size: cover;
@@ -26,4 +26,8 @@ body{
     min-height: 100vh;
     align-items: center;
 
+}
+.box{
+    border: 3px solid ;
+    padding: 25px;
 }

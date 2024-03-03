@@ -1,10 +1,15 @@
-import React from 'react'
-import DigitalClock from './DigitalClock/DigitalClock'
+
+import ComponentA from './UseContext/ComponentA'
+import MyRefComponent from './useRef/MyRefComponent'
+
+// import DigitalClock from './DigitalClock/DigitalClock'
 
 const App = () => {
   return (
     <div>
-      <DigitalClock />
+      {/* <DigitalClock /> */}
+      {/* <ComponentA /> */}
+      <MyRefComponent />
     </div>
   )
 }
