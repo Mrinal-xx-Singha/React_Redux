@@ -1,16 +1,21 @@
 
 import ComponentA from './UseContext/ComponentA'
+import Counter from './features/counter/Counter'
 import MyRefComponent from './useRef/MyRefComponent'
 
 // import DigitalClock from './DigitalClock/DigitalClock'
 
 const App = () => {
+  
   return (
-    <div>
+    <>
       {/* <DigitalClock /> */}
       {/* <ComponentA /> */}
       <MyRefComponent />
-    </div>
+      {/* <Counter/> */}
+
+
+    </>
   )
 }
 
