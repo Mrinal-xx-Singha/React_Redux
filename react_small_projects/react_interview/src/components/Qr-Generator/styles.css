@@ -1,0 +1,27 @@
+.qr-container{
+    text-align: center;
+
+}
+.qr-container h1{
+    font-weight: 700;
+    font-size: 4rem;
+    text-decoration: none;
+}
+.qr-container input {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.qr-container button {
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    background-color: rgb(138, 62, 209);
+    color: black;
+}
+.qr-container button:disabled{
+    color: wheat;
+    background-color: rgb(214, 60, 60);
+    cursor: no-drop;
+}
