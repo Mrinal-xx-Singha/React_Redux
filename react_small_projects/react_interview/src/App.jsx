@@ -1,3 +1,5 @@
+import ScrollIndicator from "./components/CustomScrollIndicator"
+import CustomTab from "./components/CustomTabs/Tab-test"
 import ImageSlider from "./components/ImageSlider"
 import LightDarkMode from "./components/LightDarkToggle"
 import QrGnerator from "./components/Qr-Generator"
@@ -28,8 +30,15 @@ const App = () => {
 
 
     {/* Light to Dark Mode */}
-    <LightDarkMode />
+    {/* <LightDarkMode /> */}
 
+
+    {/* Scroll Indicator Component */}
+    {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/> */}
+
+
+    {/* CustomTab */}
+    <CustomTab />
 
 
     </>
