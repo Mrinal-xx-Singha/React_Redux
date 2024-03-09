@@ -1,4 +1,5 @@
 import ImageSlider from "./components/ImageSlider"
+import LightDarkMode from "./components/LightDarkToggle"
 import QrGnerator from "./components/Qr-Generator"
 import Accordian from "./components/accordian"
 import LoadMoreBtn from "./components/loadMoreButton"
@@ -22,10 +23,15 @@ const App = () => {
 
 
 
-
     {/* Qr code Generator */}
-    <QrGnerator />
-    
+    {/* <QrGnerator /> */}
+
+
+    {/* Light to Dark Mode */}
+    <LightDarkMode />
+
+
+
     </>
   )
 }
