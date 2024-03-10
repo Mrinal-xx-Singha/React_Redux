@@ -1,3 +1,4 @@
+import ModalTest from "./components/CustomModalPopUp/Modal-text"
 import ScrollIndicator from "./components/CustomScrollIndicator"
 import CustomTab from "./components/CustomTabs/Tab-test"
 import ImageSlider from "./components/ImageSlider"
@@ -38,7 +39,13 @@ const App = () => {
 
 
     {/* CustomTab */}
-    <CustomTab />
+    {/* <CustomTab /> */}
+
+
+    {/* Custom Modal */}
+    <ModalTest 
+    />
+
 
 
     </>
