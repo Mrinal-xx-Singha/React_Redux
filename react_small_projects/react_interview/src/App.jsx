@@ -1,9 +1,11 @@
 import ModalTest from "./components/CustomModalPopUp/Modal-text"
 import ScrollIndicator from "./components/CustomScrollIndicator"
 import CustomTab from "./components/CustomTabs/Tab-test"
+import GitHubProfileFinder from "./components/GitHubProfileFinder"
 import ImageSlider from "./components/ImageSlider"
 import LightDarkMode from "./components/LightDarkToggle"
 import QrGnerator from "./components/Qr-Generator"
+import SearchAutoComplete from "./components/SearchAutoComplete"
 import Accordian from "./components/accordian"
 import LoadMoreBtn from "./components/loadMoreButton"
 import RandomColor from "./components/randomColor"
@@ -43,8 +45,15 @@ const App = () => {
 
 
     {/* Custom Modal */}
-    <ModalTest 
-    />
+    {/* <ModalTest /> */}
+
+
+    {/* GitHub Profile Finder */}
+    {/* <GitHubProfileFinder /> */}
+
+
+    {/* Search Auto Complete */}
+    <SearchAutoComplete />
 
 
 
