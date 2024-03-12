@@ -5,11 +5,12 @@ import GitHubProfileFinder from "./components/GitHubProfileFinder"
 import ImageSlider from "./components/ImageSlider"
 import LightDarkMode from "./components/LightDarkToggle"
 import QrGnerator from "./components/Qr-Generator"
-import SearchAutoComplete from "./components/SearchAutoComplete"
+import SearchAutoComplete from "./components/searchAutoComplete/SearchAutoComplete "
 import Accordian from "./components/accordian"
 import LoadMoreBtn from "./components/loadMoreButton"
 import RandomColor from "./components/randomColor"
 import StarRating from "./components/starRating"
+import TicTacToe from "./components/TicTacToe"
 
 const App = () => {
   return (
@@ -53,7 +54,10 @@ const App = () => {
 
 
     {/* Search Auto Complete */}
-    <SearchAutoComplete />
+    {/* <SearchAutoComplete /> */}
+
+    {/* TicTacToe game */}
+    <TicTacToe />
 
 
 

@@ -1,0 +1,27 @@
+.search-autocomplete-container{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.autoComplete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+.autoComplete h1{
+  font-size: 3.5rem;
+  margin: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+.autoComplete input{
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid;
+    margin-top: 20px;
+
+}
