@@ -11,6 +11,10 @@ import LoadMoreBtn from "./components/loadMoreButton"
 import RandomColor from "./components/randomColor"
 import StarRating from "./components/starRating"
 import TicTacToe from "./components/TicTacToe"
+import FeatureFlags from "./components/FeatureFlag"
+import FeatureFlagGlobalState from "./components/FeatureFlag/context"
+import UseFetchHookTest from "./components/useFetch/test"
+import UseOnClickOutsideTest from "./components/Use-Outside-Click/test"
 
 const App = () => {
   return (
@@ -57,9 +61,21 @@ const App = () => {
     {/* <SearchAutoComplete /> */}
 
     {/* TicTacToe game */}
-    <TicTacToe />
+    {/* <TicTacToe /> */}
 
 
+
+    {/* FeatureFlagImplementation */}
+    {/* <FeatureFlagGlobalState>
+      <FeatureFlags />
+    </FeatureFlagGlobalState> */}
+
+    {/* UseFetch Custom Hook */}
+    {/* <UseFetchHookTest /> */}
+    
+
+    {/* UseOnClick Outside */}
+    <UseOnClickOutsideTest />
 
     </>
   )
