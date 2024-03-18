@@ -1,20 +1,45 @@
-import React from "react";
 import { useState } from "react";
-const initialState = true;
+
+const initialState = {
+  name: "",
+  city: "",
+};
 
 const App = () => {
-  const [toggleText, setToggleText] = useState(initialState);
+  const [formData, setFormData] = useState(initialState);
 
-  function handleToggleText() {
-    setToggleText(!toggleText);
+
+  function handleNameChange(e){
+    setFormData({
+      ...formData,
+      name:e.target.value
+    })
   }
+  
+  function handleCityChange(e){
+    setFormData({
+      ...formData,
+      city : e.target.value
+    })
+  }
+  
   return (
-    <div className="App">
-      <h1>UseState Hook</h1>
+    <div>
+      <input type="text" placeholder="Enter Name" onChange={handleNameChange}/>
+      <select onChange={handleCityChange} id="">
+        <option value={""} id="">
+          Select City
+        </option>
+        <option value={"bangalore"} id="bangalore">
+          Bangalore
+        </option>
+        <option value={"mumbai"} id="mumbai">
+          Mumbai
+        </option>
+      </select>
       <div>
-        {toggleText ? <p>Hello World</p> : null}
-
-        <button onClick={handleToggleText}>Toggle Text</button>
+        Name is {formData.name}
+        City is {formData.city}
       </div>
     </div>
   );
