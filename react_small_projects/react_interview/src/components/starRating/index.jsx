@@ -1,47 +1,41 @@
-import { useState } from "react"
-import "./styles.css"
-import {FaStar}from 'react-icons/fa'
+import { useState } from "react";
+import "./styles.css";
+import { FaStar } from "react-icons/fa";
 
-const StarRating = ({noOfStars = 5}) => {
+const StarRating = ({ noOfStars = 5 }) => {
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
 
-  const [rating,setRating] =useState(0)
-  const [hover,setHover]=useState(0)
-
-
-  function handleClick(getCurrentIndex) {
-    setRating(getCurrentIndex)
-
+  function handleClick(GetCurrentindex) {
+    setRating(GetCurrentindex);
   }
 
-  function handleMouseEnter(getCurrentIndex){
-    setHover(getCurrentIndex);
-
+  function handleMouseEnter(GetCurrentindex) {
+    setHover(GetCurrentindex);
   }
 
-  function handleMouseLeave(){
+  function handleMouseLeave() {
     setHover(rating);
-
   }
+
   return (
-    <div className="star-rating">
+    <div className="start-rating">
+      {[...Array(noOfStars)].map((_, index) => {
+        index += 1;
 
-      {
-        [...Array(noOfStars)].map((_,index) =>{
-          index +=1
-          
-          return <FaStar
-          key={index}
-          className={index <= (hover || rating) ? "active" : "inactive"}
-          onClick={()=>handleClick(index)}
-          onMouseEnter={()=>handleMouseEnter(index)}
-          onMouseLeave={()=>handleMouseLeave()}
-
-          size={40}
-          /> 
-        })
-      }
+        return (
+          <FaStar
+            key={index}
+            className={index <= (hover || rating) ? "active" : "inactive"}
+            onClick={() => handleClick(index)}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={() => handleMouseLeave()}
+            size={35}
+          />
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default StarRating
+export default StarRating;
