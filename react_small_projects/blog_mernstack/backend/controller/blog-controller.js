@@ -77,13 +77,13 @@ const updateABlog = async (req,res)=>{
     
   }catch(e){
     console.log(e);
-    return res.send(500).json({message: "Some thing went wront while updating! Please try again"})
+    return res.status(500).json({message: "Some thing went wront while updating! Please try again"})
   }
 
   if(!currentBlogToUpdate){
     return res.status(500).json({message:"unable to update"})
   }
-  return res.send(200).json({currentBlogToUpdate})
+  return res.status(200).json({currentBlogToUpdate})
 }
 
 module.exports = {fetchListOfBlogs,deleteABlog,updateABlog,addNewBlog}

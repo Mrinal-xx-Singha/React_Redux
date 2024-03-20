@@ -3,10 +3,12 @@ import { GlobalContext } from "../../context";
 import axios from "axios";
 import classes from "./styles.module.css";
 import { FaTrash, FaEdit } from "react-icons/fa";
-
+import {useNavigate} from "react-router-dom"
 const Home = () => {
   const { formData, setFormData, blogList, setBlogList, pending, setPending } =
     useContext(GlobalContext);
+
+    const navigate=useNavigate()
 
     // Fetching data from database
   async function fetchListOfBlogs() {
@@ -40,6 +42,12 @@ const Home = () => {
     }
   }
 
+  function handleEdit(getCurrentBlogItem){
+    console.log(getCurrentBlogItem);
+    navigate("/add-blog",{state:{getCurrentBlogItem}})
+
+  }
+
   // Showing Data on the home page
   useEffect(() => {
     fetchListOfBlogs();
@@ -55,7 +63,10 @@ const Home = () => {
             <div key={blogItem.id}>
               <p>{blogItem.title}</p>
               <p>{blogItem.description}</p>
-              <FaEdit size={30} />
+              <FaEdit size={30}
+              onClick={()=>handleEdit(blogItem)}
+              
+              />
               <FaTrash
                 onClick={() => handleDeleteBlog(blogItem._id)}
                 size={30}

@@ -1,18 +1,24 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import classes from "./styles.module.css";
 import { GlobalContext } from "../../context";
 import axios from "axios"
-import {useNavigate} from "react-router-dom"
+import {useNavigate,useLocation} from "react-router-dom"
 
 const AddNewBlog = () => {
-  const { formData, setFormData } = useContext(GlobalContext);
+  const { formData, setFormData,setIsEdit,isEdit } = useContext(GlobalContext);
   const navigate =useNavigate()
+  const location =useLocation()
 
   console.log(formData)
 
 
   async function handleSaveBlogToDatabase(){
-    const response = await axios.post('http://localhost:5000/api/blogs/add',{
+    const response = isEdit ? await axios.put(`http://localhost:5000/api/blogs/update/${location.state.getCurrentBlogItem._id}`,{
+      title: formData.title,
+      description:formData.description
+    }) 
+    
+    : await axios.post('http://localhost:5000/api/blogs/add',{
       title: formData.title,
       description:formData.description
     })
@@ -21,6 +27,7 @@ const AddNewBlog = () => {
     console.log(result);
 
     if(result){
+      setIsEdit(false)
       setFormData({
         title:'',
         description:''
@@ -30,10 +37,23 @@ const AddNewBlog = () => {
 
 
   }
+  useEffect(()=>{
+console.log(location);
+
+if(location.state){
+  const {getCurrentBlogItem} =location.state;
+  setIsEdit(true)
+  setFormData({
+    title:getCurrentBlogItem.title,
+    description:getCurrentBlogItem.description
+  })
+}
+
+  },[location])
 
   return (
     <div className={classes.wrapper}>
-      <h1>Add A Blog</h1>
+      <h1>{isEdit ? "Edit a Blog" : "Add a Blog"}</h1>
       <div className={classes.formWrapper}>
         <input
           type="text"
@@ -63,7 +83,7 @@ const AddNewBlog = () => {
 
         <button
         onClick={handleSaveBlogToDatabase}
-        >Add New Blog</button>
+        >{isEdit ? "Edit Blog" : "Add Blog"}</button>
       </div>
     </div>
   );
