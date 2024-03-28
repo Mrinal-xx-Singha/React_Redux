@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles.css */
+:root {
+    /* Light theme */
+    --background-color: #fff;
+    --text-color: #000;
+}
+
+[data-theme="dark"] {
+    /* Dark theme */
+    --background-color: #333;
+    --text-color: #fff;
+}

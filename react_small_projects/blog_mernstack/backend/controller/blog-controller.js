@@ -61,29 +61,32 @@ const deleteABlog = async (req, res) => {
       .status(500)
       .json({ message: "unable to delete ! please try again" });
   }
-
 };
 
-const updateABlog = async (req,res)=>{
+const updateABlog = async (req, res) => {
   const id = req.params.id;
 
-  const {title,description} = req.body;
-  let currentBlogToUpdate
+  const { title, description } = req.body;
+  let currentBlogToUpdate;
 
-  try{
+  try {
     currentBlogToUpdate = await Blog.findByIdAndUpdate(id, {
-      title,description
-    })
-    
-  }catch(e){
+      title,
+      description,
+    });
+  } catch (e) {
     console.log(e);
-    return res.status(500).json({message: "Some thing went wront while updating! Please try again"})
+    return res
+      .status(500)
+      .json({
+        message: "Some thing went wront while updating! Please try again",
+      });
   }
 
-  if(!currentBlogToUpdate){
-    return res.status(500).json({message:"unable to update"})
+  if (!currentBlogToUpdate) {
+    return res.status(500).json({ message: "unable to update" });
   }
-  return res.status(200).json({currentBlogToUpdate})
-}
+  return res.status(200).json({ currentBlogToUpdate });
+};
 
-module.exports = {fetchListOfBlogs,deleteABlog,updateABlog,addNewBlog}
+module.exports = { fetchListOfBlogs, deleteABlog, updateABlog, addNewBlog };
