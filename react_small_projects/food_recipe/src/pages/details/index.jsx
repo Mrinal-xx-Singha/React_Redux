@@ -65,7 +65,7 @@ const Details = () => {
             {recipeDetailsData?.recipe?.ingredients.map((ingredient) => (
               <li>
                 <span className="text-2xl font-semibold text-black">
-                  {ingredient.quantity} {ingredient.unit}
+                🍴- {ingredient.quantity} {ingredient.unit}
                 </span>
                 <span className="text-2xl font-semibold text-black">
                   {ingredient.description}

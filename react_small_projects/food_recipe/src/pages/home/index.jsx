@@ -5,7 +5,10 @@ import RecipeItem from "../../components/navbar/RecipeItem";
 const Home = () => {
   const { loading, recipeList } = useContext(GlobalContext);
 
-  if (loading) return <div>Loading Data Please Wait</div>;
+  if (loading)
+    return (
+      <div className="text-3xl text-green-500 ">Loading Data Please Wait</div>
+    );
 
   return (
     <div className="py-8 container mx-auto flex flex-wrap justify-center gap-10">
@@ -13,8 +16,15 @@ const Home = () => {
         recipeList.map((item) => <RecipeItem item={item} />)
       ) : (
         <div>
-          <p className="lg:text-4xl text-xl text-center text-black font-extrabold">
-            Nothing to Show Please search something
+          <p
+            className="lg:text-4xl 
+         text-gray-900
+          text-xl text-center font-extrabold
+     
+          "
+          >
+            Nothing to Show Please search something <br />
+            Like Apple,Orange,Mango..
           </p>
         </div>
       )}
