@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const Blog = require("../model/Blog");
 
+// Fetching Data from DB
 const fetchListOfBlogs = async (req, res) => {
   let blogList;
   try {
@@ -17,6 +18,7 @@ const fetchListOfBlogs = async (req, res) => {
   return res.status(200).json({ blogList });
 };
 
+// Adding New Blog
 const addNewBlog = async (req, res) => {
   const { title, description } = req.body;
 
@@ -45,6 +47,7 @@ const addNewBlog = async (req, res) => {
   return res.status(200).json({ newlyCreatedBlog });
 };
 
+// Delete Existing Blog
 const deleteABlog = async (req, res) => {
   const id = req.params.id;
 
@@ -63,6 +66,7 @@ const deleteABlog = async (req, res) => {
   }
 };
 
+// Update Existing Blog
 const updateABlog = async (req, res) => {
   const id = req.params.id;
 

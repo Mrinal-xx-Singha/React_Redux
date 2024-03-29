@@ -9,7 +9,7 @@ const blogSchema = new Schema({
   description: {
     type: String,
   },
-  data: {
+  date: {
     type: Date,
     default: Date.now,
   },
